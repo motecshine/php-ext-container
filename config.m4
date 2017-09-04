@@ -59,5 +59,10 @@ if test "$PHP_CONTAINER" != "no"; then
   dnl
   dnl PHP_SUBST(CONTAINER_SHARED_LIBADD)
 
-  PHP_NEW_EXTENSION(container, container.c, $ext_shared,, -DZEND_ENABLE_STATIC_TSRMLS_CACHE=1)
+  PHP_NEW_EXTENSION(
+    container, 
+    container.c    \
+    src/PSRInterface/PSRInterface.c, 
+    $ext_shared,, 
+    -DZEND_ENABLE_STATIC_TSRMLS_CACHE=1)
 fi
