@@ -26,7 +26,7 @@
 #include "php_ini.h"
 #include "ext/standard/info.h"
 #include "php_container.h"
-
+#include "src/PSRInterface/PSRContainerInterface.h"
 /* {{{ PHP_MINIT_FUNCTION
  */
 PHP_MINIT_FUNCTION(container)
@@ -34,6 +34,7 @@ PHP_MINIT_FUNCTION(container)
 	/* If you have INI entries, uncomment these lines
 	REGISTER_INI_ENTRIES();
 	*/
+	PHP_CONTAINER_STARTUP(PSRContainerInferface);
 	return SUCCESS;
 }
 /* }}} */

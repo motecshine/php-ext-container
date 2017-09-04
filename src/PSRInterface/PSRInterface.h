@@ -1,4 +1,0 @@
-#ifndef PSR_CONTAINER_INTERFACE_H 
-#define PSR_CONTAINER_INTERFACE_H 1
-
-#endif
