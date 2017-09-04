@@ -34,6 +34,9 @@ extern zend_module_entry container_module_entry;
 #	define PHP_CONTAINER_API
 #endif
 
+#define PHP_CONTAINER_STARTUP(module)               ZEND_MODULE_STARTUP_N(php_container_##module)(INIT_FUNC_ARGS_PASSTHRU)
+#define PHP_CONTAINER_STARTUP_FUNCTION(module)      ZEND_MINIT_FUNCTION(php_container_##module)
+
 #ifdef ZTS
 #include "TSRM.h"
 #endif
