@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "psrinterface.h": "c",
+        "php_container.h": "c",
+        "psrcontainerinterface.h": "c"
+    }
+}
