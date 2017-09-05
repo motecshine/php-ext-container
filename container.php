@@ -5,6 +5,7 @@ if(!extension_loaded('container')) {
 	dl('container.' . PHP_SHLIB_SUFFIX);
 }
 use MContainer\ContainerInterface;
+use MContainer\ContainerContract;
 
 class Container implements ContainerInterface {
 	public function get($id)
@@ -19,5 +20,4 @@ class Container implements ContainerInterface {
 }
 
 var_dump(new Container);
-
 ?>
