@@ -1,0 +1,6 @@
+#ifndef CONTAINER_CONTRACT_H
+#define CONTAINER_CONTRACT_H 1
+PHP_CONTAINER_STARTUP_FUNCTION(ContainerContract);
+#endif
+
+
