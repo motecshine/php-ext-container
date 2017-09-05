@@ -9,6 +9,8 @@
 #include "src/ContainerContract.h"
 #include "src/PSRInterface/PSRContainerInterface.h"
 
+zend_class_entry *ContainerContract;
+
 ZEND_BEGIN_ARG_INFO(boundArgInfo, 0)
 ZEND_ARG_INFO(0, abstract)
 ZEND_END_ARG_INFO()
@@ -243,5 +245,13 @@ zend_function_entry ContainerContractMethods[] = {
 
 PHP_CONTAINER_STARTUP_FUNCTION(ContainerContract)
 {
+    zend_class_entry *PSRContainerInferface, ContainerContractTemp;
+    INIT_CLASS_ENTRY(ContainerContractTemp, "PSR\\ContainerContract", ContainerContractMethods);
+    ContainerContract = zend_register_internal_class(&ContainerContractTemp TSRMLS_CC);
+    if (ContainerContract == NULL) {
+        return FAILURE;
+    }
+    /* @TODO 需要继承PSRInterface */
+    ContainerContract->ce_flags = ZEND_ACC_INTERFACE;
     return SUCCESS;
 }
