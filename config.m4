@@ -61,9 +61,10 @@ if test "$PHP_CONTAINER" != "no"; then
 
   PHP_NEW_EXTENSION(
     container, 
-    container.c                               \
-    src/PSRInterface/PSRContainerInterface.c  \
-    src/ContainerContract.c                   \ 
+    container.c                                \
+    src/PSRInterface/PSRContainerInterface.c   \
+    src/ContainerContract.c                    \ 
+    src/MContextualBindingBuilder              \
     src/MContainer.c                           \
     , 
     $ext_shared,, 

@@ -183,7 +183,7 @@ zend_function_entry ContainerContractMethods[] = {
      * Define a contextual binding.
      *
      * @param  string  $concrete
-     * @return \Illuminate\Contracts\Container\ContextualBindingBuilder
+     * @return \M\Contracts\Container\ContextualBindingBuilder
      */
     ZEND_ABSTRACT_ME(ContainerContract, when, whenArgInfo)
 
