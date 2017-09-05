@@ -27,6 +27,7 @@
 #include "ext/standard/info.h"
 #include "php_container.h"
 #include "src/PSRInterface/PSRContainerInterface.h"
+#include "src/ContainerContract.h"
 /* {{{ PHP_MINIT_FUNCTION
  */
 PHP_MINIT_FUNCTION(container)
@@ -35,6 +36,7 @@ PHP_MINIT_FUNCTION(container)
 	REGISTER_INI_ENTRIES();
 	*/
 	PHP_CONTAINER_STARTUP(PSRContainerInferface);
+	PHP_CONTAINER_STARTUP(ContainerContract);
 	return SUCCESS;
 }
 /* }}} */

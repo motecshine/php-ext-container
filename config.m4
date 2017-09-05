@@ -61,8 +61,10 @@ if test "$PHP_CONTAINER" != "no"; then
 
   PHP_NEW_EXTENSION(
     container, 
-    container.c    \
-    src/PSRInterface/PSRContainerInterface.c \
+    container.c                               \
+    src/PSRInterface/PSRContainerInterface.c  \
+    src/ContainerContract.c                   \ 
+    src/Container.c                           \
     , 
     $ext_shared,, 
     -DZEND_ENABLE_STATIC_TSRMLS_CACHE=1)

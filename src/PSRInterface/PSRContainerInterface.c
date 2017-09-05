@@ -27,11 +27,8 @@ zend_function_entry PSRContainerInterfaceMethods[] = {
 PHP_CONTAINER_STARTUP_FUNCTION(PSRContainerInferface)
 {
     zend_class_entry PSRContainerInferfaceTempCE;
-    INIT_CLASS_ENTRY(PSRContainerInferfaceTempCE, "PSR\\ContainerInterface", PSRContainerInterfaceMethods);
+    INIT_CLASS_ENTRY(PSRContainerInferfaceTempCE, "MContainer\\ContainerInterface", PSRContainerInterfaceMethods);
     PSRContainerInferface = zend_register_internal_class(&PSRContainerInferfaceTempCE TSRMLS_CC);
-    if (PSRContainerInferface == NULL) {
-        return FAILURE;
-    }
     PSRContainerInferface->ce_flags = ZEND_ACC_INTERFACE;
     return SUCCESS;
 }

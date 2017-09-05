@@ -7,7 +7,6 @@
 /* include global headers*/
 #include "php_container.h"
 #include "src/ContainerContract.h"
-#include "src/PSRInterface/PSRContainerInterface.h"
 
 zend_class_entry *ContainerContract;
 
@@ -246,12 +245,22 @@ zend_function_entry ContainerContractMethods[] = {
 PHP_CONTAINER_STARTUP_FUNCTION(ContainerContract)
 {
     zend_class_entry *PSRContainerInferface, ContainerContractTemp;
-    INIT_CLASS_ENTRY(ContainerContractTemp, "PSR\\ContainerContract", ContainerContractMethods);
+    zend_string *PSRContainerInferfaceName, *PSRContainerInferfaceNameToLower;
+
+    PSRContainerInferfaceName =  strpprintf(0, "MContainer\\ContainerInterface");
+    PSRContainerInferfaceNameToLower = zend_string_tolower(PSRContainerInferfaceName);
+
+    INIT_CLASS_ENTRY(ContainerContractTemp, "MContainer\\ContainerContract", ContainerContractMethods);
     ContainerContract = zend_register_internal_class(&ContainerContractTemp TSRMLS_CC);
-    if (ContainerContract == NULL) {
+
+    if ((PSRContainerInferface = zend_hash_find_ptr(CG(class_table), PSRContainerInferfaceNameToLower)) == NULL) {
         return FAILURE;
     }
-    /* @TODO 需要继承PSRInterface */
+    zend_class_implements(ContainerContract TSRMLS_CC, 1, PSRContainerInferface);
+
     ContainerContract->ce_flags = ZEND_ACC_INTERFACE;
+
+    zend_string_release(PSRContainerInferfaceName);
+    zend_string_release(PSRContainerInferfaceNameToLower);
     return SUCCESS;
 }
