@@ -64,7 +64,7 @@ if test "$PHP_CONTAINER" != "no"; then
     container.c                                \
     src/PSRInterface/PSRContainerInterface.c   \
     src/ContainerContract.c                    \ 
-    src/MContextualBindingBuilder              \
+    src/MContextualBindingBuilder.c            \
     src/MContainer.c                           \
     , 
     $ext_shared,, 
