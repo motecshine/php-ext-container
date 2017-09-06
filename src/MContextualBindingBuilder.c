@@ -12,11 +12,11 @@ zend_class_entry *MContextualBindingBuilder;
 
 ZEND_BEGIN_ARG_INFO(needsArgInfo,0)
     ZEND_ARG_INFO(0, abstract)
-ZEND_END_ARG_INFO
+ZEND_END_ARG_INFO()
 
 ZEND_BEGIN_ARG_INFO(giveArgInfo,0)
     ZEND_ARG_INFO(0, implemention)
-ZEND_END_ARG_INFO
+ZEND_END_ARG_INFO()
 
 zend_function_entry MContextualBindingBuilderMethods[] = {
     ZEND_ABSTRACT_ME(MContextualBindingBuilder, needs, needsArgInfo)

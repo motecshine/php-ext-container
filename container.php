@@ -6,6 +6,7 @@ if(!extension_loaded('container')) {
 }
 use MContainer\ContainerInterface;
 use MContainer\ContainerContract;
+use MContainer\MContextualBindingBuilder;
 
 class Container implements ContainerInterface {
 	public function get($id)
@@ -20,4 +21,6 @@ class Container implements ContainerInterface {
 }
 
 var_dump(new Container);
+
+var_dump(new MContextualBindingBuilder);
 ?>
