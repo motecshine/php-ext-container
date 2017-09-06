@@ -15,7 +15,6 @@ set(SOURCE_FILES
         src/MContextualBindingBuilder.h
         container.c
         php_container.h)
-
 set(PHP_SOURCE /usr/local/Cellar/php71/7.1.8_20/include/php)
 include_directories(${PHP_SOURCE}/main)
 include_directories(${PHP_SOURCE}/Zend)
