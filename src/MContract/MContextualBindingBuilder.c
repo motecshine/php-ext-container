@@ -27,8 +27,11 @@ zend_function_entry MContextualBindingBuilderMethods[] = {
 PHP_CONTAINER_STARTUP_FUNCTION(MContextualBindingBuilder)
 {
     zend_class_entry MContextualBindingBuilderTmp;
-    INIT_CLASS_ENTRY(MContextualBindingBuilderTmp, "MContainer\\MContextualBindingBuilder", MContextualBindingBuilderMethods);
-    MContextualBindingBuilder = zend_register_internal_class(&MContextualBindingBuilderTmp TSRMLS_CC);
+    INIT_CLASS_ENTRY(MContextualBindingBuilderTmp, "MContainer\\MContract\\MContextualBindingBuilder", MContextualBindingBuilderMethods);
+    if ((MContextualBindingBuilder = zend_register_internal_class(&MContextualBindingBuilderTmp TSRMLS_CC)) == NULL) {
+        return FAILURE;
+    }
+
     MContextualBindingBuilder->ce_flags = ZEND_ACC_INTERFACE;
     return SUCCESS;
 }

@@ -247,15 +247,19 @@ PHP_CONTAINER_STARTUP_FUNCTION(ContainerContract)
     zend_class_entry *PSRContainerInferface, ContainerContractTemp;
     zend_string *PSRContainerInferfaceName, *PSRContainerInferfaceNameToLower;
 
-    PSRContainerInferfaceName =  strpprintf(0, "MContainer\\ContainerInterface");
+    PSRContainerInferfaceName =  strpprintf(0, "MContainer\\PSRInterface\\PSRContainerInterface");
     PSRContainerInferfaceNameToLower = zend_string_tolower(PSRContainerInferfaceName);
 
-    INIT_CLASS_ENTRY(ContainerContractTemp, "MContainer\\ContainerContract", ContainerContractMethods);
-    ContainerContract = zend_register_internal_class(&ContainerContractTemp TSRMLS_CC);
+    INIT_CLASS_ENTRY(ContainerContractTemp, "MContainer\\MContract\\MContainerContract", ContainerContractMethods);
+    if ((ContainerContract = zend_register_internal_class(&ContainerContractTemp TSRMLS_CC)) == NULL) {
+        return FAILURE;
+    }
+
 
     if ((PSRContainerInferface = zend_hash_find_ptr(CG(class_table), PSRContainerInferfaceNameToLower)) == NULL) {
         return FAILURE;
     }
+
     zend_class_implements(ContainerContract TSRMLS_CC, 1, PSRContainerInferface);
 
     ContainerContract->ce_flags = ZEND_ACC_INTERFACE;

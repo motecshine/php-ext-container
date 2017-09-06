@@ -61,11 +61,12 @@ if test "$PHP_CONTAINER" != "no"; then
 
   PHP_NEW_EXTENSION(
     container, 
-    container.c                                \
-    src/PSRInterface/PSRContainerInterface.c   \
-    src/MContract/MContainerContract.c                    \ 
-    src/MContract/MContextualBindingBuilder.c            \
-    src/MContainer.c                           \
+    container.c                                             \
+    src/PSRInterface/PSRContainerInterface.c                \
+    src/MContract/MContainerContract.c                      \ 
+    src/MContract/MContextualBindingBuilder.c               \
+    src/Container.c                                         \
+    src/ContextualBindingBuilder.c                          \
     , 
     $ext_shared,, 
     -DZEND_ENABLE_STATIC_TSRMLS_CACHE=1)
