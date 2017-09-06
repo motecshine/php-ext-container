@@ -6,7 +6,7 @@
 
 /* include global headers*/
 #include "php_container.h"
-#include "src/MContextualBindingBuilder.h"
+#include "src/MContract/MContextualBindingBuilder.h"
 
 zend_class_entry *MContextualBindingBuilder;
 

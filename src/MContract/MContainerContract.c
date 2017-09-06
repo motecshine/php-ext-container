@@ -6,7 +6,7 @@
 
 /* include global headers*/
 #include "php_container.h"
-#include "src/ContainerContract.h"
+#include "src/MContract/MContainerContract.h"
 
 zend_class_entry *ContainerContract;
 

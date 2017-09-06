@@ -27,8 +27,8 @@
 #include "ext/standard/info.h"
 #include "php_container.h"
 #include "src/PSRInterface/PSRContainerInterface.h"
-#include "src/ContainerContract.h"
-#include "src/MContextualBindingBuilder.h"
+#include "src/MContract/MContainerContract.h"
+#include "src/MContract/MContextualBindingBuilder.h"
 
 /* {{{ PHP_MINIT_FUNCTION
  */
