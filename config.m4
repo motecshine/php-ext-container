@@ -63,6 +63,7 @@ if test "$PHP_CONTAINER" != "no"; then
     container, 
     container.c                                \
     src/PSRInterface/PSRContainerInterface.c   \
+     src/PSRInterface/PSRContainerExceptionInterface.c   \
     src/ContainerContract.c                    \ 
     src/MContextualBindingBuilder.c            \
     src/MContainer.c                           \
