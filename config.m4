@@ -61,21 +61,13 @@ if test "$PHP_CONTAINER" != "no"; then
 
   PHP_NEW_EXTENSION(
     container, 
-<<<<<<< HEAD
-    container.c                                \
-    src/PSRInterface/PSRContainerInterface.c   \
-     src/PSRInterface/PSRContainerExceptionInterface.c   \
-    src/ContainerContract.c                    \ 
-    src/MContextualBindingBuilder.c            \
-    src/MContainer.c                           \
-=======
     container.c                                             \
     src/PSRInterface/PSRContainerInterface.c                \
+    src/PSRInterface/PSRContainerExceptionInterface.c                \
     src/MContract/MContainerContract.c                      \ 
     src/MContract/MContextualBindingBuilder.c               \
     src/Container.c                                         \
     src/ContextualBindingBuilder.c                          \
->>>>>>> 1d2a2ddefd55026785040935c1b9f1d13f6f1396
     , 
     $ext_shared,, 
     -DZEND_ENABLE_STATIC_TSRMLS_CACHE=1)
