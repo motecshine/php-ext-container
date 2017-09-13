@@ -6,7 +6,7 @@
 
 /* include global headers*/
 #include "php_container.h"
-#include "src/PSRInterface/PSRContainerInterface.h"
+#include "src/PSRInterface/PSRContainerExceptionInterface.h"
 
 zend_class_entry *PSRContainerExceptionInferface;
 
@@ -20,5 +20,6 @@ PHP_CONTAINER_STARTUP_FUNCTION(PSRContainerExceptionInferface)
     INIT_CLASS_ENTRY(PSRContainerExceptionInferfaceTempCE, "MContainer\\ContainerExceptionInterface", PSRContainerExceptionInterfaceMethods);
     PSRContainerExceptionInferface = zend_register_internal_class(&PSRContainerExceptionInferfaceTempCE TSRMLS_CC);
     PSRContainerExceptionInferface->ce_flags = ZEND_ACC_INTERFACE;
+    ZEND_ASSERT(PSRContainerExceptionInferface);
     return SUCCESS;
 }
